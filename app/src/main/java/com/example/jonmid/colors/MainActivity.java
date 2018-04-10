@@ -10,12 +10,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
 
     int seekR, seekG, seekB, seekA;
     SeekBar seekBarRed, seekBarGreen, seekBarBlue, seekBarAlpha;
     View viewBackground;
+
+    TextView tView1, tView2, tView3, tView4;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,17 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         seekBarAlpha = (SeekBar) findViewById(R.id.id_sb_alpha);
 
         viewBackground = (View) findViewById(R.id.v_id_background);
+
+        tView1 = (TextView) findViewById(R.id.textView5);
+        tView2 = (TextView) findViewById(R.id.textView6);
+        tView3 = (TextView) findViewById(R.id.textView7);
+        tView4 = (TextView) findViewById(R.id.textView8);
+
+
+        tView1.setTextColor(Color.RED);
+        tView2.setTextColor(Color.GREEN);
+        tView3.setTextColor(Color.BLUE);
+        tView4.setTextColor(Color.GRAY);
 
         seekBarRed.setOnSeekBarChangeListener(this);
         seekBarGreen.setOnSeekBarChangeListener(this);
@@ -116,8 +132,15 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         seekB = seekBarBlue.getProgress();
         seekA = seekBarAlpha.getProgress();
 
+        tView1.setText(String.valueOf(seekR));
+        tView2.setText(String.valueOf(seekG));
+        tView3.setText(String.valueOf(seekB));
+        tView4.setText(String.valueOf(seekA));
+
         int color = Color.argb(seekA, seekR, seekG, seekB);
+
         viewBackground.setBackgroundColor(color);
+
     }
 
     @Override
