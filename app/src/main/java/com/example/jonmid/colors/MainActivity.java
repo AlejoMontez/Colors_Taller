@@ -34,10 +34,10 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         viewBackground = (View) findViewById(R.id.v_id_background);
 
-        tView1 = (TextView) findViewById(R.id.textView5);
-        tView2 = (TextView) findViewById(R.id.textView6);
-        tView3 = (TextView) findViewById(R.id.textView7);
-        tView4 = (TextView) findViewById(R.id.textView8);
+        tView1 = (TextView) findViewById(R.id.textViewR);
+        tView2 = (TextView) findViewById(R.id.textViewG);
+        tView3 = (TextView) findViewById(R.id.textViewB);
+        tView4 = (TextView) findViewById(R.id.textViewA);
 
 
         tView1.setTextColor(Color.RED);
